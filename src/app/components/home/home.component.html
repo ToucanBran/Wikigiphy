@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="header">
+    <h1>Search Titles</h1>
+    <div>
+      <input [(ngModel)]="searchText" (keyup.enter)="search()" type="text" />
+      <button type="submit" (click)="search()">Search</button>
+    </div>
+  </div>
+  
+</div>
+<hr>
+<div class="row" *ngFor="let result of searchResults$ | async">
+  <div class="col">
+    {{result.title}}
+  </div>
+</div>
