@@ -1,3 +1,23 @@
-<p>
-  search-history works!
-</p>
+<div class="row">
+  <div class="header">
+    <h1>Search History</h1>
+  </div>
+  <hr>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Query</th>
+        <th scope="col">Timestamp</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let result of searchHistory$ | async; let i = index">
+        <th scope="row">{{i}}</th>
+        <td>{{result.searchText}}</td>
+        <td>{{result.createdAt}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  

@@ -14,3 +14,12 @@ export const environment = {
  * on performance if an error is thrown.
  */
 // import 'zone.js/dist/zone-error';  // Included with Angular CLI.
+export const firebaseConfig = {
+  apiKey: 'AIzaSyCmJw-Z661UIYlAZJtIJZRDbmCUJqTCX6k',
+  authDomain: 'wikigiphy.firebaseapp.com',
+  databaseURL: 'https://wikigiphy.firebaseio.com',
+  projectId: 'wikigiphy',
+  storageBucket: 'wikigiphy.appspot.com',
+  messagingSenderId: '69590204507'
+};
+
