@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { WikipediaService } from '../../services/wikipedia.service';
 import { Observable } from 'rxjs';
 import { SearchResult } from '../../models/search-result';
+import { SearchService } from '../../services/search.service';
 
 @Component({
   selector: 'app-home',
@@ -12,12 +13,12 @@ export class HomeComponent implements OnInit {
 
   searchText: string;
   searchResults$: Observable<SearchResult[]>;
-  constructor(private wikipediaService: WikipediaService) { }
+  constructor(private searchService: SearchService) { }
 
   ngOnInit() {
   }
 
   search() {
-    this.searchResults$ = this.wikipediaService.search(this.searchText);
+    this.searchResults$ = this.searchService.searchWikiGiphy(this.searchText);
   }
 }

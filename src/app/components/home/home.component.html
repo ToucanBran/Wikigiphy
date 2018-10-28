@@ -6,11 +6,12 @@
       <button type="submit" (click)="search()">Search</button>
     </div>
   </div>
-  
+
 </div>
 <hr>
 <div class="row" *ngFor="let result of searchResults$ | async">
-  <div class="col">
-    {{result.title}}
-  </div>
+  <ng-container [ngSwitch]="result.type">
+    <img *ngSwitchCase="'giphy'" src="{{result.url}}" />
+    <a *ngSwitchCase="'wikipedia'" href="{{result.url}}">{{result.title}}</a>
+  </ng-container>
 </div>
