@@ -1,9 +1,6 @@
 import { Injectable } from '@angular/core';
-import { AngularFireDatabase } from '@angular/fire/database';
 import { BehaviorSubject } from 'rxjs';
 import { Search } from '../models/search';
-import { timestamp } from 'rxjs/operators';
-
 @Injectable({
   providedIn: 'root'
 })
@@ -14,7 +11,7 @@ export class SearchHistoryService {
   // searchHistoryRef: any;
   private _searchHistory = new BehaviorSubject<Search[]>([]);
   searchHistory$ = this._searchHistory.asObservable();
-  constructor(private db: AngularFireDatabase) {
+  constructor() {
    }
 
 
